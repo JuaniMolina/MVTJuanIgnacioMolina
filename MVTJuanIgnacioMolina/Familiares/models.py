@@ -6,3 +6,6 @@ class Familiar(models.Model):
     apellido = models.CharField(max_length=40)
     descripcion = models.TextField()
     nacimiento = models.DateField()
+
+    def __str__(self):
+        return 'Nombre: ' + self.nombre + ' Apellido: ' + self.apellido + ' Nacimiento :' + str(self.nacimiento) + ' Descripcion: ' + self.descripcion

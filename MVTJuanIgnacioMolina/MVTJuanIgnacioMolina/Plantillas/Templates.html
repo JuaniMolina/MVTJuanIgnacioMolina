@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MVT Juan Ignacio Molina
+    </title>
 </head>
-<body>
-    <h1>Lista Familiares de {{nombre}} {{apellido}}</h1>
+<body style="text-align: center;">
+    <h1>Lista Familiares</h1>
     <p>
-        
+        <ul style="color: aqua; background-color: antiquewhite; list-style: none;">
+            {% for familiar in lista_familiares %} 
+            <li>
+                {{familiar.apellido}} <br> {{familiar.nombre}} <br> {{familiar.nacimiento}}
+            </li><br>
+            {% endfor %}
+        </ul>
     </p>
 </body>
 </html>
