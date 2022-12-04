@@ -1,18 +1,30 @@
 from django.http import HttpResponse
-from django.template import Template, Context
+from datetime import *
+from django.template import Template, Context, loader
+
 
 def saludo (request):
     return HttpResponse ("HOLA")
 
 def ListaFamiliares(request):
-    html = open('C:/Users/User/Desktop/Proyecto clase/pruebas/MVTJuanIgnacioMolina/MVTJuanIgnacioMolina/MVTJuanIgnacioMolina/Plantillas/Templates.html')
+    nom = "Juan"
+    ap = "Molina"
+    nacimiento = datetime(1989, 8, 12)
 
-    plantilla = Template(html.read())
+    diccionario = {'nombre': nom ,'apellido': ap, 'nacimiento':datetime.date(nacimiento) }  
+    
+    #html = open('C:/Users/User/Desktop/Proyecto clase/pruebas/MVTJuanIgnacioMolina/MVTJuanIgnacioMolina/MVTJuanIgnacioMolina/Plantillas/Templates.html')
 
-    html.close()
+    #plantilla = Template(html.read())
 
-    Contexto = Context()
+    #html.close()
 
-    documento = plantilla.render(Contexto)
+    #Contexto = Context()
 
+    #documento = plantilla.render(Contexto)
+
+    plantilla = loader.get_template('Templates.html')
+
+    documento = plantilla.render(diccionario)
+    
     return HttpResponse(documento)

@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Familiares',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,7 @@ ROOT_URLCONF = 'MVTJuanIgnacioMolina.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['C:/Users/User/Desktop/Proyecto clase/pruebas/MVTJuanIgnacioMolina/MVTJuanIgnacioMolina/MVTJuanIgnacioMolina/Plantillas'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
